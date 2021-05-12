@@ -1,6 +1,6 @@
 FROM openjdk:7-alpine
 
-RUN apk --update upgrade && apk add libx11
+RUN apk --update upgrade && apk add libx11 bash
 
 RUN wget -q -O - https://archive.apache.org/dist/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt  \
 	&& mv /opt/zookeeper-3.4.6 /opt/zookeeper  \
