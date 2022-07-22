@@ -24,7 +24,7 @@ RUN mkdir /kafka /data /logs
 RUN apt-get update  \
 	&& apt-get install -y ca-certificates bash libx11-dev netcat
 
-RUN wget -q -O - https://archive.apache.org/dist/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0.tar.gz | tar -xzf - -C /opt  \
+RUN wget -q -O - https://archive.apache.org/dist/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0-bin.tar.gz | tar -xzf - -C /opt  \
 	&& mv /opt/apache-zookeeper-3.8.0 /opt/zookeeper  \
 	&& cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg  \
 	&& mkdir -p /tmp/zookeeper
