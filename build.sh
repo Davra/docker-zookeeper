@@ -2,8 +2,7 @@
 
 SERVICE_NAME=${SERVICE_NAME:-docker-zookeeper}
 
-MAJ_VER=${MAJ_VER:-0}
-MIN_VER=${MIN_VER:-0}
+ZK_VER=${ZK_VER:-"3.8.0"}
 BUILD_NUMBER=${BUILD_NUMBER:-4dev}
 
 DOCKER_ENGINE_HOST=${DOCKER_ENGINE_HOST:-172.17.0.1}
@@ -20,7 +19,7 @@ tar -zcf build/${SERVICE_NAME}.tar.gz --exclude=build --exclude=test .
 
 target_lower=`echo "${SERVICE_NAME}"  | tr '[:upper:]' '[:lower:]'`
 target_regname=$target_lower
-target_tag=${MAJ_VER}.${MIN_VER}.${BUILD_NUMBER}
+target_tag=${ZK_VER}_${BUILD_NUMBER}
 
 ##################
 # BUILD
