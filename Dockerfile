@@ -28,6 +28,7 @@ RUN wget -q -O - https://archive.apache.org/dist/zookeeper/zookeeper-3.8.0/apach
 	&& mv /opt/apache-zookeeper-3.8.0-bin /opt/zookeeper  \
 	&& cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg  \
 	&& mkdir -p /tmp/zookeeper
+RUN echo "4lw.commands.whitelist=dump, ruok" >> /opt/zookeeper/conf/zoo.cfg
 ENV JAVA_HOME=/usr/local/openjdk-11
 EXPOSE 2181/tcp 2888/tcp 3888/tcp
 WORKDIR /opt/zookeeper
