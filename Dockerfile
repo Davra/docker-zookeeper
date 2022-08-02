@@ -30,6 +30,11 @@ RUN wget -q -O - https://archive.apache.org/dist/zookeeper/zookeeper-3.8.0/apach
 	&& mkdir -p /tmp/zookeeper
 RUN echo "4lw.commands.whitelist=dump, ruok" >> /opt/zookeeper/conf/zoo.cfg
 RUN echo "snapshot.trust.empty=true" >> /opt/zookeeper/conf/zoo.cfg
+
+#comment out default dataDir setting and add our own
+RUN sed -i s/dataDir/#dataDir/g /opt/zookeeper/conf/zoo.cfg
+RUN echo "dataDir=/var/lib/zookeeper/data" >> /opt/zookeeper/conf/zoo.cfg
+
 ENV JAVA_HOME=/usr/local/openjdk-11
 EXPOSE 2181/tcp 2888/tcp 3888/tcp
 WORKDIR /opt/zookeeper
