@@ -42,9 +42,4 @@ if [[ ! -f "$ZOO_CONF_DIR/zoo.cfg" ]]; then
     done
 fi
 
-# Write myid only if it doesn't exist
-if [[ ! -f "$ZOO_DATA_DIR/myid" ]]; then
-    echo "${ZOO_MY_ID:-1}" > "$ZOO_DATA_DIR/myid"
-fi
-
 exec "$@"
