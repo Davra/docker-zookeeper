@@ -40,5 +40,5 @@ EXPOSE 2181/tcp 2888/tcp 3888/tcp
 WORKDIR /opt/zookeeper
 VOLUME [/opt/zookeeper/conf /tmp/zookeeper]
 COPY docker-entrypoint.sh /
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/opt/zookeeper/bin/zkServer.sh", "start-foreground"]
