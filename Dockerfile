@@ -36,6 +36,7 @@ RUN sed -i s/dataDir/#dataDir/g /opt/zookeeper/conf/zoo.cfg
 RUN echo "dataDir=/var/lib/zookeeper/data" >> /opt/zookeeper/conf/zoo.cfg
 
 ENV JAVA_HOME=/usr/local/openjdk-11
+ENV ZOO_CONF_DIR=/opt/zookeeper/conf
 EXPOSE 2181/tcp 2888/tcp 3888/tcp
 WORKDIR /opt/zookeeper
 VOLUME [/opt/zookeeper/conf /tmp/zookeeper]
