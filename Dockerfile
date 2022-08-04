@@ -43,5 +43,6 @@ VOLUME [/opt/zookeeper/conf /tmp/zookeeper]
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod 777 /docker-entrypoint.sh
+RUN chmod 777 /opt/zookeeper/conf/zoo.cfg
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/opt/zookeeper/bin/zkServer.sh", "start-foreground"]
